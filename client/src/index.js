@@ -14,7 +14,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('/sw.js').catch(() => {
-      // SW registration is best-effort — never block the app
+      // SW registration is best-effort  -  never block the app
     });
   });
 }

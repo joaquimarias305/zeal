@@ -64,7 +64,7 @@ export default function ShiftCard({ shift, onApply, applied = false, showApply =
         <div>
           <p className="text-xs text-gray-500">Horario</p>
           <p className="text-sm font-semibold text-gray-900">
-            {shift.start_time?.slice(0,5)} – {shift.end_time?.slice(0,5)}
+            {shift.start_time?.slice(0,5)} - {shift.end_time?.slice(0,5)}
           </p>
         </div>
         <div>

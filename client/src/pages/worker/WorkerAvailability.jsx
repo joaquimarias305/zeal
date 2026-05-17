@@ -44,7 +44,7 @@ export default function WorkerAvailability() {
             </select>
             <input type="time" value={slot.start_time} onChange={e => updateSlot(i, 'start_time', e.target.value)}
               className="input w-32" />
-            <span className="text-gray-400">–</span>
+            <span className="text-gray-400">-</span>
             <input type="time" value={slot.end_time} onChange={e => updateSlot(i, 'end_time', e.target.value)}
               className="input w-32" />
             <label className="flex items-center gap-2 text-sm text-gray-600 cursor-pointer">

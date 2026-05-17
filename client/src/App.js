@@ -5,33 +5,33 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import { AuthProvider, useAuth } from './context/AuthContext';
 
-// Pages – Auth
+// Pages - Auth
 import LoginPage    from './pages/auth/LoginPage';
 import RegisterPage from './pages/auth/RegisterPage';
 import VerifyEmail  from './pages/auth/VerifyEmail';
 import ForgotPassword from './pages/auth/ForgotPassword';
 import ResetPassword  from './pages/auth/ResetPassword';
 
-// Pages – Worker
+// Pages - Worker
 import WorkerDashboard  from './pages/worker/WorkerDashboard';
 import WorkerProfile    from './pages/worker/WorkerProfile';
 import WorkerAvailability from './pages/worker/WorkerAvailability';
 import WorkerSettings   from './pages/worker/WorkerSettings';
 
-// Pages – Business
+// Pages - Business
 import BusinessDashboard from './pages/business/BusinessDashboard';
 import BusinessProfile   from './pages/business/BusinessProfile';
 import PostShift         from './pages/business/PostShift';
 import ManageShift       from './pages/business/ManageShift';
 import ShiftPayment      from './pages/business/ShiftPayment';
 
-// Pages – Shared
+// Pages - Shared
 import LandingPage       from './pages/LandingPage';
 import ShiftBoard        from './pages/shifts/ShiftBoard';
 import ShiftDetail       from './pages/shifts/ShiftDetail';
 import PaymentPage       from './pages/shifts/PaymentPage';
 
-// Pages – Admin
+// Pages - Admin
 import AdminDashboard from './pages/admin/AdminDashboard';
 
 // Components

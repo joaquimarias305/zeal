@@ -7,7 +7,7 @@ import { format } from 'date-fns';
 import api from '../../utils/api';
 import CheckoutForm from '../../components/common/CheckoutForm';
 
-// Lazy-load Stripe — never initialise with undefined key
+// Lazy-load Stripe  -  never initialise with undefined key
 const getStripe = () =>
   loadStripe(process.env.REACT_APP_STRIPE_PK || '');
 
@@ -91,7 +91,7 @@ export default function ShiftPayment() {
               <p className="font-semibold text-gray-900">{shift.title || shift.role}</p>
               <p className="text-sm text-gray-500 mt-0.5">
                 {format(new Date(shift.shift_date + 'T00:00:00'), 'EEEE dd MMMM')} ·{' '}
-                {shift.start_time?.slice(0,5)} – {shift.end_time?.slice(0,5)}
+                {shift.start_time?.slice(0,5)} - {shift.end_time?.slice(0,5)}
               </p>
               <p className="text-xs text-gray-400 mt-1">📍 {shift.address}</p>
             </div>

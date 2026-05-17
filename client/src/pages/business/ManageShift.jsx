@@ -63,7 +63,7 @@ export default function ManageShift() {
             <div>
               <h1 className="text-xl font-bold text-gray-900">{shift.title || shift.role}</h1>
               <p className="text-gray-500 mt-0.5">
-                {format(new Date(shift.shift_date+'T00:00:00'), 'EEEE dd MMMM yyyy')} · {shift.start_time?.slice(0,5)} – {shift.end_time?.slice(0,5)}
+                {format(new Date(shift.shift_date+'T00:00:00'), 'EEEE dd MMMM yyyy')} · {shift.start_time?.slice(0,5)} - {shift.end_time?.slice(0,5)}
               </p>
             </div>
             <div className="text-right">
@@ -171,7 +171,7 @@ export default function ManageShift() {
                   </button>
                 </div>
 
-                {/* Pay button — shown after accepting */}
+                {/* Pay button  -  shown after accepting */}
                 {app.status === 'accepted' && (
                   <button
                     onClick={() => navigate(`/business/shifts/${id}/pay/${app.id}`)}

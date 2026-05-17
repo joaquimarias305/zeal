@@ -104,7 +104,7 @@ export default function ShiftDetail() {
           </div>
           <div className="p-3 bg-gray-50 rounded-xl">
             <p className="text-xs text-gray-400 mb-1">⏰ Horario</p>
-            <p className="font-semibold">{shift.start_time?.slice(0,5)} – {shift.end_time?.slice(0,5)}</p>
+            <p className="font-semibold">{shift.start_time?.slice(0,5)} - {shift.end_time?.slice(0,5)}</p>
             <p className="text-xs text-gray-400">{hours}h</p>
           </div>
           <div className="p-3 bg-gray-50 rounded-xl">

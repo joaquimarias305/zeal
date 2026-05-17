@@ -129,7 +129,7 @@ export default function WorkerDashboard() {
                   </div>
                   <div>
                     <p className="text-xs text-gray-400">Horario</p>
-                    <p className="font-medium">{shift.start_time?.slice(0,5)} – {shift.end_time?.slice(0,5)}</p>
+                    <p className="font-medium">{shift.start_time?.slice(0,5)} - {shift.end_time?.slice(0,5)}</p>
                   </div>
                   <div>
                     <p className="text-xs text-gray-400">Pago</p>

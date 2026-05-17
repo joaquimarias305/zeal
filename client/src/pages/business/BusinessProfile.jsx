@@ -108,10 +108,10 @@ export default function BusinessProfile() {
           </div>
           {profile.description && <p className="text-gray-700">{profile.description}</p>}
           <div className="grid grid-cols-2 gap-3 text-sm">
-            <div><p className="text-gray-400 text-xs">Industria</p><p className="font-medium">{profile.industry || '–'}</p></div>
+            <div><p className="text-gray-400 text-xs">Industria</p><p className="font-medium">{profile.industry || '-'}</p></div>
             <div><p className="text-gray-400 text-xs">Zona</p><p className="font-medium">{t(`common.miami_zones.${profile.zone}`)}</p></div>
-            <div><p className="text-gray-400 text-xs">Dirección</p><p className="font-medium">{profile.address || '–'}</p></div>
-            <div><p className="text-gray-400 text-xs">Web</p><p className="font-medium">{profile.website || '–'}</p></div>
+            <div><p className="text-gray-400 text-xs">Dirección</p><p className="font-medium">{profile.address || '-'}</p></div>
+            <div><p className="text-gray-400 text-xs">Web</p><p className="font-medium">{profile.website || '-'}</p></div>
           </div>
         </div>
       )}

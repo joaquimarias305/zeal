@@ -97,13 +97,13 @@ export default function BusinessDashboard() {
         <div className="flex items-center justify-between mb-4">
           <h2 className="text-lg font-bold text-gray-900">{t('business.active_shifts')}</h2>
           <Link to="/business/post-shift" className="text-sm text-brand-600 hover:text-brand-700 font-medium">
-            + Publicar â†’
+            + Publicar â†'
           </Link>
         </div>
 
         {active_shifts?.length === 0 ? (
           <div className="card text-center py-10">
-            <p className="text-4xl mb-3">ðŸ“‹</p>
+            <p className="text-4xl mb-3">ðŸ"‹</p>
             <p className="text-gray-500 mb-4">{t('business.no_shifts')}</p>
             <Link to="/business/post-shift" className="btn-primary">
               {t('business.post_shift')}
@@ -133,7 +133,7 @@ export default function BusinessDashboard() {
                   </div>
                   <div>
                     <p className="text-xs text-gray-400">Horario</p>
-                    <p className="font-medium">{shift.start_time?.slice(0,5)} â€“ {shift.end_time?.slice(0,5)}</p>
+                    <p className="font-medium">{shift.start_time?.slice(0,5)} â€" {shift.end_time?.slice(0,5)}</p>
                   </div>
                   <div>
                     <p className="text-xs text-gray-400">Tarifa</p>
