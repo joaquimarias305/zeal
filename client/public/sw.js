@@ -1,4 +1,4 @@
-// ShiftMIA Service Worker — Web Push handler
+﻿// ZEAL Service Worker â€” Web Push handler
 // This file is served from /sw.js (public directory)
 
 self.addEventListener('install', () => self.skipWaiting());
@@ -11,7 +11,7 @@ self.addEventListener('push', (event) => {
   try {
     data = event.data.json();
   } catch {
-    data = { title: 'ShiftMIA', body: event.data.text(), url: '/' };
+    data = { title: 'ZEAL', body: event.data.text(), url: '/' };
   }
 
   const options = {
@@ -25,7 +25,7 @@ self.addEventListener('push', (event) => {
   };
 
   event.waitUntil(
-    self.registration.showNotification(data.title || 'ShiftMIA', options)
+    self.registration.showNotification(data.title || 'ZEAL', options)
   );
 });
 

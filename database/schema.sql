@@ -1,10 +1,10 @@
--- ═══════════════════════════════════════════════════════════════════════════
--- ShiftMIA – PostgreSQL Schema
--- ═══════════════════════════════════════════════════════════════════════════
+﻿-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+-- ZEAL â€“ PostgreSQL Schema
+-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 
 CREATE EXTENSION IF NOT EXISTS "pgcrypto";
 
--- ─── ENUMS ──────────────────────────────────────────────────────────────────
+-- â”€â”€â”€ ENUMS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 CREATE TYPE user_type AS ENUM ('worker', 'business', 'admin');
 CREATE TYPE language_pref AS ENUM ('en', 'es', 'both');
@@ -23,7 +23,7 @@ CREATE TYPE miami_zone AS ENUM (
   'hialeah', 'kendall', 'aventura', 'other'
 );
 
--- ─── USERS ──────────────────────────────────────────────────────────────────
+-- â”€â”€â”€ USERS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 CREATE TABLE users (
   id              UUID PRIMARY KEY DEFAULT gen_random_uuid(),
@@ -47,7 +47,7 @@ CREATE TABLE users (
 CREATE INDEX idx_users_email ON users(email);
 CREATE INDEX idx_users_type  ON users(type);
 
--- ─── WORKER PROFILES ────────────────────────────────────────────────────────
+-- â”€â”€â”€ WORKER PROFILES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 CREATE TABLE worker_profiles (
   user_id             UUID PRIMARY KEY REFERENCES users(id) ON DELETE CASCADE,
@@ -68,12 +68,12 @@ CREATE TABLE worker_profiles (
   updated_at          TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
--- ─── WORKER AVAILABILITY ────────────────────────────────────────────────────
+-- â”€â”€â”€ WORKER AVAILABILITY â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 CREATE TABLE worker_availability (
   id          UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   worker_id   UUID NOT NULL REFERENCES users(id) ON DELETE CASCADE,
-  day_of_week SMALLINT, -- 0=Sun…6=Sat, NULL = specific date
+  day_of_week SMALLINT, -- 0=Sunâ€¦6=Sat, NULL = specific date
   specific_date DATE,
   start_time  TIME NOT NULL,
   end_time    TIME NOT NULL,
@@ -84,7 +84,7 @@ CREATE TABLE worker_availability (
 
 CREATE INDEX idx_avail_worker ON worker_availability(worker_id);
 
--- ─── BUSINESS PROFILES ──────────────────────────────────────────────────────
+-- â”€â”€â”€ BUSINESS PROFILES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 CREATE TABLE business_profiles (
   user_id            UUID PRIMARY KEY REFERENCES users(id) ON DELETE CASCADE,
@@ -104,7 +104,7 @@ CREATE TABLE business_profiles (
   updated_at         TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
--- ─── SHIFTS ─────────────────────────────────────────────────────────────────
+-- â”€â”€â”€ SHIFTS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 CREATE TABLE shifts (
   id               UUID PRIMARY KEY DEFAULT gen_random_uuid(),
@@ -137,7 +137,7 @@ CREATE INDEX idx_shifts_date      ON shifts(shift_date);
 CREATE INDEX idx_shifts_role      ON shifts(role);
 CREATE INDEX idx_shifts_zone      ON shifts(zone);
 
--- ─── APPLICATIONS ───────────────────────────────────────────────────────────
+-- â”€â”€â”€ APPLICATIONS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 CREATE TABLE applications (
   id          UUID PRIMARY KEY DEFAULT gen_random_uuid(),
@@ -154,7 +154,7 @@ CREATE INDEX idx_apps_shift  ON applications(shift_id);
 CREATE INDEX idx_apps_worker ON applications(worker_id);
 CREATE INDEX idx_apps_status ON applications(status);
 
--- ─── PAYMENTS ───────────────────────────────────────────────────────────────
+-- â”€â”€â”€ PAYMENTS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 CREATE TABLE payments (
   id                  UUID PRIMARY KEY DEFAULT gen_random_uuid(),
@@ -179,7 +179,7 @@ CREATE INDEX idx_payments_worker   ON payments(worker_id);
 CREATE INDEX idx_payments_business ON payments(business_id);
 CREATE INDEX idx_payments_status   ON payments(status);
 
--- ─── REVIEWS ────────────────────────────────────────────────────────────────
+-- â”€â”€â”€ REVIEWS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 CREATE TABLE reviews (
   id           UUID PRIMARY KEY DEFAULT gen_random_uuid(),
@@ -195,7 +195,7 @@ CREATE TABLE reviews (
 CREATE INDEX idx_reviews_reviewee ON reviews(reviewee_id);
 CREATE INDEX idx_reviews_shift    ON reviews(shift_id);
 
--- ─── NOTIFICATIONS ──────────────────────────────────────────────────────────
+-- â”€â”€â”€ NOTIFICATIONS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 CREATE TABLE notifications (
   id         UUID PRIMARY KEY DEFAULT gen_random_uuid(),
@@ -212,7 +212,7 @@ CREATE TABLE notifications (
 
 CREATE INDEX idx_notif_user ON notifications(user_id, read);
 
--- ─── TRIGGERS – updated_at ──────────────────────────────────────────────────
+-- â”€â”€â”€ TRIGGERS â€“ updated_at â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 CREATE OR REPLACE FUNCTION set_updated_at()
 RETURNS TRIGGER AS $$
@@ -232,7 +232,7 @@ CREATE TRIGGER trg_applications_updated
 CREATE TRIGGER trg_payments_updated
   BEFORE UPDATE ON payments FOR EACH ROW EXECUTE FUNCTION set_updated_at();
 
--- ─── TRIGGER – auto-badge Top Worker ────────────────────────────────────────
+-- â”€â”€â”€ TRIGGER â€“ auto-badge Top Worker â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 CREATE OR REPLACE FUNCTION refresh_worker_badge()
 RETURNS TRIGGER AS $$

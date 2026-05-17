@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+﻿import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { toast } from 'react-toastify';
 import api from '../../utils/api';
@@ -56,14 +56,14 @@ export default function AdminDashboard() {
     try {
       await api.patch(`/admin/workers/${id}/verify`);
       setUsers(u => u.map(x => x.id === id ? { ...x, miami_verified: true } : x));
-      toast.success('Trabajador verificado ✅');
+      toast.success('Trabajador verificado âœ…');
     } catch { toast.error(t('common.error')); }
   };
 
   const verifyBusiness = async (id) => {
     try {
       await api.patch(`/admin/businesses/${id}/verify`);
-      toast.success('Empresa verificada ✅');
+      toast.success('Empresa verificada âœ…');
     } catch { toast.error(t('common.error')); }
   };
 
@@ -92,7 +92,7 @@ export default function AdminDashboard() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-bold text-gray-900">Admin Dashboard</h1>
-          <p className="text-gray-500 text-sm mt-0.5">ShiftMIA Control Center</p>
+          <p className="text-gray-500 text-sm mt-0.5">ZEAL Control Center</p>
         </div>
         <span className="badge bg-red-100 text-red-700 text-xs font-bold px-3 py-1.5">ADMIN</span>
       </div>
@@ -146,7 +146,7 @@ export default function AdminDashboard() {
       {/* Search (users tabs) */}
       {(tab === 'workers' || tab === 'businesses') && (
         <input value={search} onChange={e => setSearch(e.target.value)}
-          placeholder="Buscar por nombre o email…"
+          placeholder="Buscar por nombre o emailâ€¦"
           className="input max-w-sm" />
       )}
 

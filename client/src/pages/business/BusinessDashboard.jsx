@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+﻿import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { format } from 'date-fns';
@@ -48,7 +48,7 @@ export default function BusinessDashboard() {
       <div className="flex items-start justify-between flex-wrap gap-4">
         <div>
           <h1 className="text-2xl font-bold text-gray-900">
-            {profile?.company_name} 🏨
+            {profile?.company_name} ðŸ¨
           </h1>
           <p className="text-gray-500 mt-0.5">{t('business.dashboard_title')}</p>
         </div>
@@ -75,7 +75,7 @@ export default function BusinessDashboard() {
           <div className="flex items-center justify-center">
             <StarRating rating={profile?.avg_rating || 0} size="lg" />
           </div>
-          <p className="text-sm text-gray-500 mt-1">Valoración ({profile?.total_reviews || 0})</p>
+          <p className="text-sm text-gray-500 mt-1">ValoraciÃ³n ({profile?.total_reviews || 0})</p>
         </div>
       </div>
 
@@ -83,10 +83,10 @@ export default function BusinessDashboard() {
       {!profile?.verified && (
         <div className="card bg-amber-50 border-amber-200">
           <div className="flex items-center gap-3">
-            <span className="text-2xl">⚠️</span>
+            <span className="text-2xl">âš ï¸</span>
             <div>
-              <p className="font-semibold text-amber-800">Verificación pendiente</p>
-              <p className="text-sm text-amber-700">Tu empresa está pendiente de verificación por ShiftMIA.</p>
+              <p className="font-semibold text-amber-800">VerificaciÃ³n pendiente</p>
+              <p className="text-sm text-amber-700">Tu empresa estÃ¡ pendiente de verificaciÃ³n por ZEAL.</p>
             </div>
           </div>
         </div>
@@ -97,13 +97,13 @@ export default function BusinessDashboard() {
         <div className="flex items-center justify-between mb-4">
           <h2 className="text-lg font-bold text-gray-900">{t('business.active_shifts')}</h2>
           <Link to="/business/post-shift" className="text-sm text-brand-600 hover:text-brand-700 font-medium">
-            + Publicar →
+            + Publicar â†’
           </Link>
         </div>
 
         {active_shifts?.length === 0 ? (
           <div className="card text-center py-10">
-            <p className="text-4xl mb-3">📋</p>
+            <p className="text-4xl mb-3">ðŸ“‹</p>
             <p className="text-gray-500 mb-4">{t('business.no_shifts')}</p>
             <Link to="/business/post-shift" className="btn-primary">
               {t('business.post_shift')}
@@ -133,7 +133,7 @@ export default function BusinessDashboard() {
                   </div>
                   <div>
                     <p className="text-xs text-gray-400">Horario</p>
-                    <p className="font-medium">{shift.start_time?.slice(0,5)} – {shift.end_time?.slice(0,5)}</p>
+                    <p className="font-medium">{shift.start_time?.slice(0,5)} â€“ {shift.end_time?.slice(0,5)}</p>
                   </div>
                   <div>
                     <p className="text-xs text-gray-400">Tarifa</p>
@@ -156,7 +156,7 @@ export default function BusinessDashboard() {
       {/* Recent reviews from workers */}
       {recent_reviews?.length > 0 && (
         <section>
-          <h2 className="text-lg font-bold text-gray-900 mb-4">Reseñas recibidas</h2>
+          <h2 className="text-lg font-bold text-gray-900 mb-4">ReseÃ±as recibidas</h2>
           <div className="space-y-3">
             {recent_reviews.map((r, i) => (
               <div key={i} className="card">

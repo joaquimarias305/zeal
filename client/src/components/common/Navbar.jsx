@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useAuth } from '../../context/AuthContext';
@@ -9,13 +9,13 @@ const LangToggle = () => {
   const toggle = () => {
     const next = lang === 'es' ? 'en' : 'es';
     i18n.changeLanguage(next);
-    localStorage.setItem('shiftmia_lang', next);
+    localStorage.setItem('zeal_lang', next);
   };
   return (
     <button onClick={toggle}
       className="flex items-center gap-1 px-3 py-1.5 rounded-full border border-gray-200
                  text-sm font-medium text-gray-600 hover:bg-gray-50 transition-colors">
-      <span className="text-base">{lang === 'es' ? '🇺🇸' : '🇪🇸'}</span>
+      <span className="text-base">{lang === 'es' ? 'ðŸ‡ºðŸ‡¸' : 'ðŸ‡ªðŸ‡¸'}</span>
       <span>{lang === 'es' ? 'EN' : 'ES'}</span>
     </button>
   );

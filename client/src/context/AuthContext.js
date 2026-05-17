@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useReducer, useEffect } from 'react';
+﻿import React, { createContext, useContext, useReducer, useEffect } from 'react';
 import api from '../utils/api';
 import i18n from '../i18n/i18n';
 
@@ -6,7 +6,7 @@ const AuthContext = createContext(null);
 
 const initialState = {
   user: null,
-  token: localStorage.getItem('shiftmia_token'),
+  token: localStorage.getItem('zeal_token'),
   loading: true,
   error: null,
 };
@@ -15,10 +15,10 @@ const reducer = (state, action) => {
   switch (action.type) {
     case 'SET_USER':    return { ...state, user: action.payload, loading: false, error: null };
     case 'LOGIN':
-      localStorage.setItem('shiftmia_token', action.payload.token);
+      localStorage.setItem('zeal_token', action.payload.token);
       return { ...state, user: action.payload.user, token: action.payload.token, loading: false, error: null };
     case 'LOGOUT':
-      localStorage.removeItem('shiftmia_token');
+      localStorage.removeItem('zeal_token');
       return { ...state, user: null, token: null, loading: false };
     case 'SET_LOADING': return { ...state, loading: action.payload };
     case 'SET_ERROR':   return { ...state, error: action.payload, loading: false };
@@ -30,7 +30,7 @@ export const AuthProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
-    const token = localStorage.getItem('shiftmia_token');
+    const token = localStorage.getItem('zeal_token');
     if (!token) { dispatch({ type: 'SET_LOADING', payload: false }); return; }
 
     api.get('/auth/me')

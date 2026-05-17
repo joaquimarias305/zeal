@@ -1,4 +1,4 @@
-require('dotenv').config();
+﻿require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
@@ -9,7 +9,7 @@ const rateLimit = require('express-rate-limit');
 const logger = require('./config/logger');
 const { errorHandler } = require('./middleware/errorHandler');
 
-// ─── Routes ─────────────────────────────────────────────────────────────────
+// â”€â”€â”€ Routes â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 const authRoutes     = require('./routes/auth');
 const workerRoutes   = require('./routes/workers');
 const businessRoutes = require('./routes/businesses');
@@ -22,7 +22,7 @@ const uploadRoutes   = require('./routes/uploads');
 
 const app = express();
 
-// ─── Security & middleware ───────────────────────────────────────────────────
+// â”€â”€â”€ Security & middleware â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 app.use(helmet());
 app.use(compression());
 app.use(cors({
@@ -30,7 +30,7 @@ app.use(cors({
   credentials: true,
 }));
 
-// Stripe webhooks need raw body — mount BEFORE express.json()
+// Stripe webhooks need raw body â€” mount BEFORE express.json()
 app.use('/api/payments/webhook', express.raw({ type: 'application/json' }));
 
 app.use(express.json({ limit: '10mb' }));
@@ -42,7 +42,7 @@ if (process.env.NODE_ENV !== 'test') {
   }));
 }
 
-// ─── Global rate limiter ─────────────────────────────────────────────────────
+// â”€â”€â”€ Global rate limiter â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 min
   max: 200,
@@ -52,10 +52,10 @@ const limiter = rateLimit({
 });
 app.use('/api', limiter);
 
-// ─── Health check ────────────────────────────────────────────────────────────
+// â”€â”€â”€ Health check â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 app.get('/health', (_req, res) => res.json({ status: 'ok', env: process.env.NODE_ENV }));
 
-// ─── API routes ──────────────────────────────────────────────────────────────
+// â”€â”€â”€ API routes â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 app.use('/api/auth',          authRoutes);
 app.use('/api/workers',       workerRoutes);
 app.use('/api/businesses',    businessRoutes);
@@ -72,16 +72,16 @@ if (process.env.NODE_ENV !== 'production') {
   app.use('/uploads', require('express').static(path.join(__dirname, '../uploads')));
 }
 
-// ─── 404 ─────────────────────────────────────────────────────────────────────
+// â”€â”€â”€ 404 â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 app.use((_req, res) => res.status(404).json({ error: 'Route not found' }));
 
-// ─── Error handler ───────────────────────────────────────────────────────────
+// â”€â”€â”€ Error handler â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 app.use(errorHandler);
 
-// ─── Start ───────────────────────────────────────────────────────────────────
+// â”€â”€â”€ Start â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-  logger.info(`ShiftMIA API running on port ${PORT} [${process.env.NODE_ENV}]`);
+  logger.info(`ZEAL API running on port ${PORT} [${process.env.NODE_ENV}]`);
 });
 
 module.exports = app;

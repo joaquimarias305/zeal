@@ -1,7 +1,7 @@
-{
-  "name": "shiftmia-server",
+﻿{
+  "name": "zeal-server",
   "version": "1.0.0",
-  "description": "ShiftMIA API – Bilingual hospitality workforce platform",
+  "description": "ZEAL API â€“ Bilingual hospitality workforce platform",
   "main": "src/app.js",
   "scripts": {
     "dev": "nodemon src/app.js",

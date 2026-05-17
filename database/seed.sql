@@ -1,19 +1,19 @@
--- ═══════════════════════════════════════════════════════════════════════════
--- ShiftMIA – Seed Data (development only)
+﻿-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+-- ZEAL â€“ Seed Data (development only)
 -- Passwords are all: Test1234!
--- ═══════════════════════════════════════════════════════════════════════════
+-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 
 -- Admin user
 INSERT INTO users (id, type, name, email, password_hash, language, email_verified) VALUES
-  ('00000000-0000-0000-0000-000000000001', 'admin', 'Admin ShiftMIA',
-   'admin@shiftmia.com',
+  ('00000000-0000-0000-0000-000000000001', 'admin', 'Admin ZEAL',
+   'admin@zeal.com',
    '$2b$12$LQv3c1yqBWVHxkd0LHAkCOYz6TtxMQJqhN8/Lewfr9UrFcBpG/6OK',
    'en', TRUE);
 
 -- Sample business
 INSERT INTO users (id, type, name, email, password_hash, language, email_verified) VALUES
   ('00000000-0000-0000-0000-000000000002', 'business', 'Ocean Drive Bistro',
-   'bistro@shiftmia.com',
+   'bistro@zeal.com',
    '$2b$12$LQv3c1yqBWVHxkd0LHAkCOYz6TtxMQJqhN8/Lewfr9UrFcBpG/6OK',
    'en', TRUE);
 
@@ -29,7 +29,7 @@ INSERT INTO business_profiles (user_id, company_name, description, industry, zon
 -- Sample worker
 INSERT INTO users (id, type, name, email, password_hash, language, email_verified) VALUES
   ('00000000-0000-0000-0000-000000000003', 'worker', 'Carlos Mendez',
-   'carlos@shiftmia.com',
+   'carlos@zeal.com',
    '$2b$12$LQv3c1yqBWVHxkd0LHAkCOYz6TtxMQJqhN8/Lewfr9UrFcBpG/6OK',
    'es', TRUE);
 

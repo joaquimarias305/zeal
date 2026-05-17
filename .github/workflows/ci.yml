@@ -1,4 +1,4 @@
-name: ShiftMIA CI/CD
+﻿name: ZEAL CI/CD
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     branches: [main, master]
 
 jobs:
-  # ─── Backend lint + test ───────────────────────────────────────────────────
+  # â”€â”€â”€ Backend lint + test â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   server:
     name: Server (Node.js)
     runs-on: ubuntu-latest
@@ -31,7 +31,7 @@ jobs:
       - name: Lint check
         run: node --check src/app.js || true
 
-  # ─── Frontend build ────────────────────────────────────────────────────────
+  # â”€â”€â”€ Frontend build â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   client:
     name: Client (React)
     runs-on: ubuntu-latest
@@ -65,7 +65,7 @@ jobs:
           path: client/build
           retention-days: 7
 
-  # ─── Deploy to Railway (main branch only) ─────────────────────────────────
+  # â”€â”€â”€ Deploy to Railway (main branch only) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   deploy:
     name: Deploy to Railway
     runs-on: ubuntu-latest
@@ -79,6 +79,6 @@ jobs:
         run: npm install -g @railway/cli
 
       - name: Deploy
-        run: railway up --service shiftmia-api
+        run: railway up --service zeal-api
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}

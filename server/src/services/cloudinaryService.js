@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Cloudinary upload helper.
  * Only used when CLOUDINARY_URL env var is set (production).
  * Falls back to returning a local /uploads/:filename URL in dev.
@@ -11,11 +11,11 @@ if (process.env.CLOUDINARY_URL) {
     cloudinary = require('cloudinary').v2;
     cloudinary.config({ cloudinary_url: process.env.CLOUDINARY_URL });
   } catch {
-    // cloudinary package not installed – silently ignore in dev
+    // cloudinary package not installed â€“ silently ignore in dev
   }
 }
 
-const uploadBuffer = async (buffer, { folder = 'shiftmia', public_id } = {}) => {
+const uploadBuffer = async (buffer, { folder = 'zeal', public_id } = {}) => {
   if (!cloudinary) {
     throw new Error('Cloudinary not configured');
   }

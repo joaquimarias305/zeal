@@ -1,12 +1,12 @@
-# Railway deployment configuration
+﻿# Railway deployment configuration
 # Docs: https://docs.railway.app/deploy/config-as-code
 
 [build]
 builder = "NIXPACKS"
 
-# ─── API Service ──────────────────────────────────────────────────────────────
+# â”€â”€â”€ API Service â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 [[services]]
-name          = "shiftmia-api"
+name          = "zeal-api"
 source        = "server"
 startCommand  = "node src/app.js"
 
@@ -19,9 +19,9 @@ restartPolicyMaxRetries = 3
 healthcheckPath         = "/health"
 healthcheckTimeout      = 300
 
-# ─── Frontend Service ─────────────────────────────────────────────────────────
+# â”€â”€â”€ Frontend Service â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 [[services]]
-name          = "shiftmia-web"
+name          = "zeal-web"
 source        = "client"
 startCommand  = "npx serve -s build -l $PORT"
 

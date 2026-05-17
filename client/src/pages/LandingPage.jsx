@@ -1,48 +1,48 @@
-import { Link } from 'react-router-dom';
+﻿import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import i18n from '../i18n/i18n';
 
-// ─── Data ────────────────────────────────────────────────────────────────────
+// â”€â”€â”€ Data â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 const features = [
-  { icon: '⚡', titleKey: 'land.f1_title', descKey: 'land.f1_desc' },
-  { icon: '💳', titleKey: 'land.f2_title', descKey: 'land.f2_desc' },
-  { icon: '⭐', titleKey: 'land.f3_title', descKey: 'land.f3_desc' },
-  { icon: '🌎', titleKey: 'land.f4_title', descKey: 'land.f4_desc' },
-  { icon: '✅', titleKey: 'land.f5_title', descKey: 'land.f5_desc' },
-  { icon: '📅', titleKey: 'land.f6_title', descKey: 'land.f6_desc' },
+  { icon: 'âš¡', titleKey: 'land.f1_title', descKey: 'land.f1_desc' },
+  { icon: 'ðŸ’³', titleKey: 'land.f2_title', descKey: 'land.f2_desc' },
+  { icon: 'â­', titleKey: 'land.f3_title', descKey: 'land.f3_desc' },
+  { icon: 'ðŸŒŽ', titleKey: 'land.f4_title', descKey: 'land.f4_desc' },
+  { icon: 'âœ…', titleKey: 'land.f5_title', descKey: 'land.f5_desc' },
+  { icon: 'ðŸ“…', titleKey: 'land.f6_title', descKey: 'land.f6_desc' },
 ];
 
 const steps = [
-  { n: '1', icon: '📝', titleKey: 'land.s1_title', descKey: 'land.s1_desc' },
-  { n: '2', icon: '🔍', titleKey: 'land.s2_title', descKey: 'land.s2_desc' },
-  { n: '3', icon: '✅', titleKey: 'land.s3_title', descKey: 'land.s3_desc' },
-  { n: '4', icon: '💰', titleKey: 'land.s4_title', descKey: 'land.s4_desc' },
+  { n: '1', icon: 'ðŸ“', titleKey: 'land.s1_title', descKey: 'land.s1_desc' },
+  { n: '2', icon: 'ðŸ”', titleKey: 'land.s2_title', descKey: 'land.s2_desc' },
+  { n: '3', icon: 'âœ…', titleKey: 'land.s3_title', descKey: 'land.s3_desc' },
+  { n: '4', icon: 'ðŸ’°', titleKey: 'land.s4_title', descKey: 'land.s4_desc' },
 ];
 
 const testimonials = [
   {
     name: 'Carlos M.',
-    role: 'Server · Miami Beach',
+    role: 'Server Â· Miami Beach',
     avatar: 'C',
     color: 'bg-brand-100 text-brand-600',
-    quote: { es: '"Antes tardaba días en encontrar trabajo. Con ShiftMIA tengo turno en minutos y el pago me llega el mismo día."', en: '"Before it took days to find work. With ShiftMIA I get a shift in minutes and get paid the same day."' },
+    quote: { es: '"Antes tardaba dÃ­as en encontrar trabajo. Con ZEAL tengo turno en minutos y el pago me llega el mismo dÃ­a."', en: '"Before it took days to find work. With ZEAL I get a shift in minutes and get paid the same day."' },
     rating: 5,
   },
   {
     name: 'Ocean Drive Bistro',
-    role: 'Restaurant · South Beach',
+    role: 'Restaurant Â· South Beach',
     avatar: 'O',
     color: 'bg-miami-teal/20 text-miami-teal',
-    quote: { es: '"Publicamos un turno y en 30 minutos ya teníamos 8 candidatos verificados. El proceso de pago es automático."', en: '"We posted a shift and in 30 minutes had 8 verified candidates. The payment process is automatic."' },
+    quote: { es: '"Publicamos un turno y en 30 minutos ya tenÃ­amos 8 candidatos verificados. El proceso de pago es automÃ¡tico."', en: '"We posted a shift and in 30 minutes had 8 verified candidates. The payment process is automatic."' },
     rating: 5,
   },
   {
-    name: 'María G.',
-    role: 'Housekeeping · Doral',
+    name: 'MarÃ­a G.',
+    role: 'Housekeeping Â· Doral',
     avatar: 'M',
     color: 'bg-pink-100 text-pink-600',
-    quote: { es: '"Me encanta que todo está en español. Finalmente una app que entiende nuestra comunidad."', en: '"I love that everything is in Spanish. Finally an app that understands our community."' },
+    quote: { es: '"Me encanta que todo estÃ¡ en espaÃ±ol. Finalmente una app que entiende nuestra comunidad."', en: '"I love that everything is in Spanish. Finally an app that understands our community."' },
     rating: 5,
   },
 ];
@@ -74,7 +74,7 @@ const plans = [
 
 const zones = ['Miami Beach','Brickell','Wynwood','Doral','Coral Gables','Little Havana','Hialeah','Aventura'];
 
-// ─── Sub-components ──────────────────────────────────────────────────────────
+// â”€â”€â”€ Sub-components â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 const Stars = ({ n = 5 }) => (
   <div className="flex gap-0.5">
@@ -86,7 +86,7 @@ const Stars = ({ n = 5 }) => (
   </div>
 );
 
-// ─── Main component ──────────────────────────────────────────────────────────
+// â”€â”€â”€ Main component â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 export default function LandingPage() {
   const { t } = useTranslation();
@@ -95,7 +95,7 @@ export default function LandingPage() {
   return (
     <div className="overflow-x-hidden">
 
-      {/* ── HERO ──────────────────────────────────────────────────────────── */}
+      {/* â”€â”€ HERO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="relative bg-gradient-to-br from-gray-900 via-miami-navy to-gray-900 text-white overflow-hidden">
         {/* Decorative blobs */}
         <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-brand-500/20 blur-3xl pointer-events-none" />
@@ -121,7 +121,7 @@ export default function LandingPage() {
 
             <div className="mt-8 flex flex-wrap gap-4">
               <Link to="/register" className="btn-primary px-8 py-4 text-base">
-                {t('land.cta_worker')} →
+                {t('land.cta_worker')} â†’
               </Link>
               <Link to="/register?type=business"
                 className="px-8 py-4 text-base font-semibold rounded-lg border border-white/30 text-white hover:bg-white/10 transition-colors">
@@ -133,14 +133,14 @@ export default function LandingPage() {
             <div className="mt-10 flex flex-wrap items-center gap-6 text-sm text-gray-400">
               <div className="flex items-center gap-2">
                 <Stars />
-                <span>4.9 · 500+ trabajadores</span>
+                <span>4.9 Â· 500+ trabajadores</span>
               </div>
               <div className="flex items-center gap-2">
-                <span className="text-miami-teal">✓</span>
+                <span className="text-miami-teal">âœ“</span>
                 <span>Miami Verified</span>
               </div>
               <div className="flex items-center gap-2">
-                <span className="text-brand-400">⚡</span>
+                <span className="text-brand-400">âš¡</span>
                 <span>{t('land.instant_pay_badge')}</span>
               </div>
             </div>
@@ -153,21 +153,21 @@ export default function LandingPage() {
             [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
             {zones.map(z => (
               <span key={z} className="flex-shrink-0 px-3 py-1.5 rounded-full bg-white/10 border border-white/10 text-white/70 text-sm">
-                📍 {z}
+                ðŸ“ {z}
               </span>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── STATS BAR ─────────────────────────────────────────────────────── */}
+      {/* â”€â”€ STATS BAR â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="bg-brand-500 text-white py-6">
         <div className="max-w-5xl mx-auto px-4 grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
           {[
             { v: '500+', l: t('land.stat1') },
             { v: '120+', l: t('land.stat2') },
             { v: '$2M+', l: t('land.stat3') },
-            { v: '4.9 ⭐', l: t('land.stat4') },
+            { v: '4.9 â­', l: t('land.stat4') },
           ].map(s => (
             <div key={s.l}>
               <p className="text-2xl sm:text-3xl font-extrabold">{s.v}</p>
@@ -177,7 +177,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ── FOR WORKERS ───────────────────────────────────────────────────── */}
+      {/* â”€â”€ FOR WORKERS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -194,13 +194,13 @@ export default function LandingPage() {
               <ul className="mt-6 space-y-3">
                 {['land.wl1','land.wl2','land.wl3','land.wl4'].map(k => (
                   <li key={k} className="flex items-start gap-3">
-                    <span className="w-5 h-5 rounded-full bg-brand-100 text-brand-600 flex items-center justify-center flex-shrink-0 mt-0.5 text-xs font-bold">✓</span>
+                    <span className="w-5 h-5 rounded-full bg-brand-100 text-brand-600 flex items-center justify-center flex-shrink-0 mt-0.5 text-xs font-bold">âœ“</span>
                     <span className="text-gray-700">{t(k)}</span>
                   </li>
                 ))}
               </ul>
               <Link to="/register" className="inline-block mt-8 btn-primary px-8 py-3">
-                {t('land.cta_worker')} →
+                {t('land.cta_worker')} â†’
               </Link>
             </div>
 
@@ -213,19 +213,19 @@ export default function LandingPage() {
                   <div>
                     <div className="flex items-center gap-2">
                       <p className="font-bold text-gray-900">Carlos M.</p>
-                      <span className="badge bg-miami-teal/10 text-miami-teal text-xs">✅ Verified</span>
-                      <span className="badge bg-amber-100 text-amber-700 text-xs">⭐ Top</span>
+                      <span className="badge bg-miami-teal/10 text-miami-teal text-xs">âœ… Verified</span>
+                      <span className="badge bg-amber-100 text-amber-700 text-xs">â­ Top</span>
                     </div>
                     <Stars />
-                    <p className="text-xs text-gray-500 mt-0.5">Server · Bartender · 5 años exp.</p>
+                    <p className="text-xs text-gray-500 mt-0.5">Server Â· Bartender Â· 5 aÃ±os exp.</p>
                   </div>
                 </div>
                 {/* Upcoming shift */}
                 <div className="card border-l-4 border-brand-500 shadow-sm">
-                  <p className="text-xs text-gray-400 mb-1">Próximo turno</p>
+                  <p className="text-xs text-gray-400 mb-1">PrÃ³ximo turno</p>
                   <p className="font-semibold text-gray-900">Ocean Drive Bistro</p>
                   <div className="flex items-center justify-between mt-2 text-sm">
-                    <span className="text-gray-500">Sáb 15 Jun · 10:00–16:00</span>
+                    <span className="text-gray-500">SÃ¡b 15 Jun Â· 10:00â€“16:00</span>
                     <span className="font-bold text-miami-teal">$108</span>
                   </div>
                 </div>
@@ -246,7 +246,7 @@ export default function LandingPage() {
               </div>
               {/* Floating instant-pay badge */}
               <div className="absolute -bottom-4 -right-4 bg-white rounded-2xl shadow-lg px-4 py-3 flex items-center gap-2 border border-gray-100">
-                <span className="text-2xl">⚡</span>
+                <span className="text-2xl">âš¡</span>
                 <div>
                   <p className="text-xs text-gray-500">{t('land.instant_pay_badge')}</p>
                   <p className="font-bold text-gray-900 text-sm">$91.80</p>
@@ -257,7 +257,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ── FOR BUSINESSES ────────────────────────────────────────────────── */}
+      {/* â”€â”€ FOR BUSINESSES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -267,7 +267,7 @@ export default function LandingPage() {
                 <div className="card shadow-sm">
                   <div className="flex items-center justify-between mb-4">
                     <p className="font-bold text-gray-900">Ocean Drive Bistro</p>
-                    <span className="badge bg-miami-teal/10 text-miami-teal">✅ Verificado</span>
+                    <span className="badge bg-miami-teal/10 text-miami-teal">âœ… Verificado</span>
                   </div>
                   <div className="grid grid-cols-3 gap-3 text-center">
                     {[{v:'3', l:'Activos'},{v:'12',l:'Pendientes'},{v:'$4,200',l:'Este mes'}].map(s => (
@@ -280,7 +280,7 @@ export default function LandingPage() {
                 </div>
                 {/* Applicant card */}
                 <div className="card shadow-sm">
-                  <p className="text-xs text-gray-400 mb-3">Candidatos · Brunch Sábado</p>
+                  <p className="text-xs text-gray-400 mb-3">Candidatos Â· Brunch SÃ¡bado</p>
                   {[
                     { name:'Carlos M.', rating:4.9, verified:true, top:true },
                     { name:'Ana R.',    rating:4.7, verified:true, top:false },
@@ -293,15 +293,15 @@ export default function LandingPage() {
                         <div>
                           <div className="flex items-center gap-1">
                             <p className="text-sm font-medium">{w.name}</p>
-                            {w.verified && <span className="text-miami-teal text-xs">✅</span>}
-                            {w.top && <span className="text-xs">⭐</span>}
+                            {w.verified && <span className="text-miami-teal text-xs">âœ…</span>}
+                            {w.top && <span className="text-xs">â­</span>}
                           </div>
                           <Stars n={w.rating >= 4.8 ? 5 : 4} />
                         </div>
                       </div>
                       <div className="flex gap-1">
-                        <button className="px-2 py-1 rounded-lg text-xs font-medium bg-brand-500 text-white">✓</button>
-                        <button className="px-2 py-1 rounded-lg text-xs font-medium bg-gray-100 text-gray-500">✕</button>
+                        <button className="px-2 py-1 rounded-lg text-xs font-medium bg-brand-500 text-white">âœ“</button>
+                        <button className="px-2 py-1 rounded-lg text-xs font-medium bg-gray-100 text-gray-500">âœ•</button>
                       </div>
                     </div>
                   ))}
@@ -322,20 +322,20 @@ export default function LandingPage() {
               <ul className="mt-6 space-y-3">
                 {['land.bl1','land.bl2','land.bl3','land.bl4'].map(k => (
                   <li key={k} className="flex items-start gap-3">
-                    <span className="w-5 h-5 rounded-full bg-miami-teal/10 text-miami-teal flex items-center justify-center flex-shrink-0 mt-0.5 text-xs font-bold">✓</span>
+                    <span className="w-5 h-5 rounded-full bg-miami-teal/10 text-miami-teal flex items-center justify-center flex-shrink-0 mt-0.5 text-xs font-bold">âœ“</span>
                     <span className="text-gray-700">{t(k)}</span>
                   </li>
                 ))}
               </ul>
               <Link to="/register?type=business" className="inline-block mt-8 px-8 py-3 rounded-lg font-semibold bg-miami-teal text-white hover:bg-teal-600 transition-colors">
-                {t('land.cta_business')} →
+                {t('land.cta_business')} â†’
               </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── HOW IT WORKS ──────────────────────────────────────────────────── */}
+      {/* â”€â”€ HOW IT WORKS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="py-20 bg-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-brand-500 font-semibold text-sm uppercase tracking-wide mb-2">{t('land.how_label')}</p>
@@ -363,7 +363,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ── FEATURES GRID ─────────────────────────────────────────────────── */}
+      {/* â”€â”€ FEATURES GRID â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-12">{t('land.features_title')}</h2>
@@ -379,7 +379,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ── TESTIMONIALS ──────────────────────────────────────────────────── */}
+      {/* â”€â”€ TESTIMONIALS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-extrabold text-gray-900 mb-12">{t('land.testimonials_title')}</h2>
@@ -405,7 +405,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ── PRICING ───────────────────────────────────────────────────────── */}
+      {/* â”€â”€ PRICING â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="py-20 bg-gradient-to-br from-gray-50 to-brand-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900">{t('land.pricing_title')}</h2>
@@ -427,7 +427,7 @@ export default function LandingPage() {
                 <ul className="space-y-2.5 mb-8">
                   {p.features.map(fk => (
                     <li key={fk} className="flex items-start gap-2 text-sm text-gray-700">
-                      <span className="text-brand-500 mt-0.5 flex-shrink-0">✓</span>
+                      <span className="text-brand-500 mt-0.5 flex-shrink-0">âœ“</span>
                       {t(fk)}
                     </li>
                   ))}
@@ -441,14 +441,14 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ── FINAL CTA ─────────────────────────────────────────────────────── */}
+      {/* â”€â”€ FINAL CTA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="py-24 bg-gradient-to-r from-brand-500 to-brand-600 text-white text-center">
         <div className="max-w-2xl mx-auto px-4">
           <h2 className="text-3xl sm:text-4xl font-extrabold">{t('land.final_title')}</h2>
           <p className="mt-4 text-brand-100 text-lg">{t('land.final_sub')}</p>
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/register" className="px-8 py-4 rounded-xl bg-white text-brand-600 font-bold hover:bg-brand-50 transition-colors">
-              {t('land.cta_worker')} 🚀
+              {t('land.cta_worker')} ðŸš€
             </Link>
             <Link to="/register?type=business" className="px-8 py-4 rounded-xl border-2 border-white/50 text-white font-bold hover:bg-white/10 transition-colors">
               {t('land.cta_business')}
@@ -458,22 +458,22 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ── FOOTER ────────────────────────────────────────────────────────── */}
+      {/* â”€â”€ FOOTER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <footer className="bg-gray-900 text-gray-400 py-10">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm">
           <div className="flex items-center gap-2">
             <div className="w-7 h-7 rounded-lg bg-brand-500 flex items-center justify-center">
               <span className="text-white font-bold text-sm">S</span>
             </div>
-            <span className="font-bold text-white">ShiftMIA</span>
-            <span className="text-gray-600">© 2025</span>
+            <span className="font-bold text-white">ZEAL</span>
+            <span className="text-gray-600">Â© 2025</span>
           </div>
           <div className="flex gap-6">
             <Link to="/shifts" className="hover:text-white transition-colors">{t('nav.shifts')}</Link>
             <Link to="/register" className="hover:text-white transition-colors">{t('nav.register')}</Link>
             <Link to="/login" className="hover:text-white transition-colors">{t('nav.login')}</Link>
           </div>
-          <p>Made with ❤️ for Miami's Latino community</p>
+          <p>Made with â¤ï¸ for Miami's Latino community</p>
         </div>
       </footer>
     </div>

@@ -1,4 +1,4 @@
-const router  = require('express').Router();
+﻿const router  = require('express').Router();
 const path    = require('path');
 const fs      = require('fs');
 const { authenticate } = require('../middleware/auth');
@@ -22,7 +22,7 @@ router.post('/avatar', authenticate, upload.single('avatar'), async (req, res, n
       // Production: upload to Cloudinary
       const { uploadBuffer } = require('../services/cloudinaryService');
       avatarUrl = await uploadBuffer(req.file.buffer, {
-        folder: 'shiftmia/avatars',
+        folder: 'zeal/avatars',
         public_id: `user_${req.user.id}`,
       });
     } else {
@@ -51,7 +51,7 @@ router.post('/logo', authenticate, upload.single('logo'), async (req, res, next)
     if (process.env.CLOUDINARY_URL && req.file.buffer) {
       const { uploadBuffer } = require('../services/cloudinaryService');
       logoUrl = await uploadBuffer(req.file.buffer, {
-        folder: 'shiftmia/logos',
+        folder: 'zeal/logos',
         public_id: `business_${req.user.id}`,
       });
     } else {
