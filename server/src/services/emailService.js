@@ -1,4 +1,4 @@
-﻿const nodemailer = require('nodemailer');
+const nodemailer = require('nodemailer');
 const logger = require('../config/logger');
 
 const transporter = nodemailer.createTransport({

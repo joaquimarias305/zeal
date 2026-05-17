@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Cloudinary upload helper.
  * Only used when CLOUDINARY_URL env var is set (production).
  * Falls back to returning a local /uploads/:filename URL in dev.

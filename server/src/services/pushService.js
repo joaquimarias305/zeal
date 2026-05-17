@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Web Push Notification service using the `web-push` package.
  * Requires VAPID_PUBLIC_KEY and VAPID_PRIVATE_KEY env vars.
  * Generate them once with: npx web-push generate-vapid-keys

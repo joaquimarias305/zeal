@@ -1,8 +1,9 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useAuth } from '../../context/AuthContext';
 import i18n from '../../i18n/i18n';
+import Logo from './Logo';
 
 const LangToggle = () => {
   const lang = i18n.language;
@@ -13,10 +14,11 @@ const LangToggle = () => {
   };
   return (
     <button onClick={toggle}
-      className="flex items-center gap-1 px-3 py-1.5 rounded-full border border-gray-200
-                 text-sm font-medium text-gray-600 hover:bg-gray-50 transition-colors">
-      <span className="text-base">{lang === 'es' ? 'ðŸ‡ºðŸ‡¸' : 'ðŸ‡ªðŸ‡¸'}</span>
-      <span>{lang === 'es' ? 'EN' : 'ES'}</span>
+      className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-gray-200
+                 text-sm font-semibold text-gray-500 hover:bg-gray-50 hover:text-gray-800 transition-colors">
+      <span className={`text-xs font-bold ${lang === 'en' ? 'text-gray-900' : 'text-gray-400'}`}>EN</span>
+      <span className="text-gray-300">/</span>
+      <span className={`text-xs font-bold ${lang === 'es' ? 'text-gray-900' : 'text-gray-400'}`}>ES</span>
     </button>
   );
 };
@@ -38,14 +40,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
 
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-brand-500 flex items-center justify-center">
-              <span className="text-white font-bold text-sm">S</span>
-            </div>
-            <span className="font-extrabold text-xl text-gray-900">
-              Shift<span className="text-brand-500">MIA</span>
-            </span>
-          </Link>
+          <Logo size="md" />
 
           {/* Desktop links */}
           <div className="hidden md:flex items-center gap-2">

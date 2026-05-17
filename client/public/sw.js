@@ -1,4 +1,4 @@
-﻿// ZEAL Service Worker â€” Web Push handler
+// ZEAL Service Worker â€” Web Push handler
 // This file is served from /sw.js (public directory)
 
 self.addEventListener('install', () => self.skipWaiting());

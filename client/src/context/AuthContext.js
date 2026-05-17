@@ -1,4 +1,4 @@
-﻿import React, { createContext, useContext, useReducer, useEffect } from 'react';
+import React, { createContext, useContext, useReducer, useEffect } from 'react';
 import api from '../utils/api';
 import i18n from '../i18n/i18n';
 
