@@ -5,7 +5,7 @@ import es from './es.json';
 
 i18n.use(initReactI18next).init({
   resources: { en: { translation: en }, es: { translation: es } },
-  lng: localStorage.getItem('shiftmia_lang') || 'es', // Spanish-first
+  lng: localStorage.getItem('shiftmia_lang') || 'en',
   fallbackLng: 'en',
   interpolation: { escapeValue: false },
 });
