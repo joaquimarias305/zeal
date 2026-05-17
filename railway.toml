@@ -1,0 +1,29 @@
+# Railway deployment configuration
+# Docs: https://docs.railway.app/deploy/config-as-code
+
+[build]
+builder = "NIXPACKS"
+
+# ─── API Service ──────────────────────────────────────────────────────────────
+[[services]]
+name          = "shiftmia-api"
+source        = "server"
+startCommand  = "node src/app.js"
+
+[services.build]
+buildCommand  = "npm ci"
+
+[services.deploy]
+restartPolicyType       = "ON_FAILURE"
+restartPolicyMaxRetries = 3
+healthcheckPath         = "/health"
+healthcheckTimeout      = 300
+
+# ─── Frontend Service ─────────────────────────────────────────────────────────
+[[services]]
+name          = "shiftmia-web"
+source        = "client"
+startCommand  = "npx serve -s build -l $PORT"
+
+[services.build]
+buildCommand  = "npm ci && npm run build"

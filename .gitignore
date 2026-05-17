@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Environment variables (NEVER commit these)
+.env
+.env.local
+.env.*.local
+server/.env
+client/.env
+
+# Build outputs
+client/build/
+dist/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Uploads (local dev only)
+server/uploads/
+
+# IDE
+.vscode/settings.json
+.idea/
+
+# Railway
+.railway/
