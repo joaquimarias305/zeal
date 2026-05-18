@@ -6,7 +6,9 @@ const pool = new Pool({
   ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false,
   max: 20,
   idleTimeoutMillis: 30000,
-  connectionTimeoutMillis: 5000,
+  connectionTimeoutMillis: 10000,
+  // Force IPv4 — Render free tier has no IPv6 support
+  ...(process.env.NODE_ENV === 'production' && { family: 4 }),
 });
 
 pool.on('error', (err) => {
